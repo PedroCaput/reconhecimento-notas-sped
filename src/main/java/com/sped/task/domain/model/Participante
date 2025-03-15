@@ -1,0 +1,138 @@
+package java.com.sped.task.domain.model;
+
+import jakarta.persistence.*;
+
+@Entity(name = "tb_participante")
+public class Participante {
+
+    private Long registro;
+
+    @Id
+    private Long codigoParticipante;
+
+    private String nome;
+
+    private Long codigoPais;
+
+    private Long cnpj;
+
+    private Long cpf;
+
+    private Long inscricaoEstadual;
+
+    private Long codigoMunicipal;
+
+    private Long suframa;
+
+    private String endereco;
+
+    private Long numeroEndereco;
+
+    private String complementoEndereco;
+
+    private String bairro;
+
+    public Long getRegistro() {
+        return registro;
+    }
+
+    public void setRegistro(Long registro) {
+        this.registro = registro;
+    }
+
+    public Long getCodigoParticipante(){
+        return codigoParticipante;
+    }
+
+    public void setCodigoParticipante(Long codigoParticipante){
+        this.codigoParticipante = codigoParticipante;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public getCodigoPais(){
+        return codigoPais;
+    }
+
+    public setCodigoPais(Long codigoPais){
+        this.codigoPais = codigoPais;
+    }
+
+    public getCnpj(){
+        return cnpj;
+    }
+
+    public setCpnj(Long cnpj){
+        this.cnpj = cnpj;
+    }
+
+    public getCpf(){
+        return cpf;
+    }
+
+    public setCpf(Long cpf){
+        this.cpf = cpf;
+    }
+
+    public getInscricaoEstadual(){
+        return inscricaoEstadual;
+    }
+
+    public setIncricaoEstadual(Long inscricaoEstadual){
+        this.inscricaoEstadual = inscricaoEstadual;
+    }
+
+    public getCodigoMunicipal(){
+        return codigoMunicipal;
+    }
+
+    public setCodigoMunicipal(Long codigoMunicipal){
+        this.codigoMunicipal = codigoMunicipal;
+    }
+
+    public getSuframa(){
+        return suframa;
+    }
+
+    public setSuframa(Long suframa){
+        this.suframa = suframa;
+    }
+
+    public getEndereco(){
+        return endereco;
+    }
+
+    public setEndereco(String endereco){
+        this.endereco = endereco;
+    }
+
+    public getNumeroEndereco(){
+        return numeroEndereco;
+    }
+
+    public setNumeroEndereco(Long numeroEndereco){
+        this.numeroEndereco = numeroEndereco;
+    }
+
+    public getComplementoEndereco(){
+        return complementoEndereco;
+    }
+
+    public setComplementoEndereco(String complementoEndereco){
+        this.complementoEndereco = complementoEndereco;
+    }
+
+    public getBairro(){
+        return bairro;
+    }
+
+    public setBairro(String bairro){
+        this.bairro = bairro;
+    }
+}

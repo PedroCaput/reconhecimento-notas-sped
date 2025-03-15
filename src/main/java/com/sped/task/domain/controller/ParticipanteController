@@ -1,0 +1,55 @@
+package java.com.sped.task.domain.controller;
+
+import java.com.sped.task.domain.model.Participante;
+import java.com.sped.task.service.ParticipanteService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+
+@RestController
+@RequestMapping("/participante")
+public class ParticipanteController {
+    private final ParticipanteService participanteService;
+
+    public ParticipanteController(ParticipanteService participanteService){
+        this.participanteService = participanteService;
+    }
+    @GetMapping("/{id}")
+    public ResponseEntity<Participante> findById(@PathVariable Long id){
+        var participante = participanteService.findParticipanteById(id);
+        return ResponseEntity.ok(participante);
+    }
+
+    @PostMapping()
+    public ResponseEntity<Participante> createParticipante(@RequestBody Participante participanteToCreate){
+        var participanteToCreate = participanteService.createParticipante(participanteToCreate);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("{id}")
+                .buildAndExpand(participanteCreated.getId())
+                .toUri();
+        return ResponseEntity.created(location).body(participanteToCreate);
+    }
+
+    @PutMapping()
+    public ResponseEntity<Participante> alterParticipante(@RequestBody Participante participanteToUpdate){
+        var participanteUpdated = participanteService.updateParticipante(participanteToUpdate);
+        URI location = ServletUriComponentsBuilder.fromCurrentRequest()
+                .path("{id}")
+                .buildAndExpand(participanteToUpdate.getId())
+                .toUri();
+        return ResponseEntity.created(location).body(participanteToUpdate);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteParticipante(@PathVariable Long id){
+        boolean deleted = participanteService.deleteParticipanteById(id);
+        if (deleted) {
+            return ResponseEntity.noContent().build(); // Retorna resposta 204 No Content
+        }
+        else {
+            return ResponseEntity.notFound().build(); // Retorna resposta 404 Not Found se a pessoa não for encontrada
+        }
+    }
+}

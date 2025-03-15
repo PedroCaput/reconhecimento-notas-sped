@@ -1,0 +1,277 @@
+package java.com.sped.task.domain.model;
+
+import jakarta.persistence.*;
+
+@Entity(name = "tb_nota_fiscal")
+public class NotaFiscal{
+    private Long registro;
+
+    private int indicadorTipoOperacao;
+
+    private int indicadorEmitenteDoDocumentoFiscal;
+
+    private Long codigoParticipante;
+
+    private int codigoDoModeloDoDocumentoFiscal;
+
+    private int codigoDaSituacaoDoDocumentoFiscal;
+
+    @Id
+    private Long serieDoDocumentoFiscal;
+
+    private Long numeroDoDocumentoFiscal;
+
+    private Long chaveDaNotaFiscalEletronica;
+
+    private Long dataDaEmissaoDoDocumentoFiscal;
+
+    private Long dataDaEntradaOuSaida;
+
+    private Long valorTotalDoDocumentoFiscal;
+
+    private int indicadorDoTipoDePagamento;
+
+    private Long valorTotalDesconto;
+
+    private Long abatimentoNaoTributadoENaoComercial;
+
+    private Long valorTotalDasMercadoriasEServicos;
+
+    private int indicadorDoTipoDoFrete;
+
+    private Long valorDoFreteIndicadoNoDocumentoFiscal;
+
+    private Long valorDoSeguroIndicadoNoDocumentoFIscal;
+
+    private Long valorDeOutrasDespesasAcessorias;
+
+    private Long valorBaseDeCalculoDoICMS;
+
+    private Long valorDoICMSRetidoPorSubstituicaoTributaria;
+
+    private Long valorTotalDoIPI;
+
+    private Long valorTotalDoPIS;
+
+    private Long valorTotalDaCOFINS;
+
+    private Long valorTotalDoPISRetidoPorSubstituicaoTributaria;
+
+    private Long valorTotalDaCOFINSRetidoPorSubstituicaoTributaria;
+
+    public Long getRegistro() {
+        return registro;
+    }
+
+    public void setRegistro(Long registro) {
+        this.registro = registro;
+    }
+
+    public int getIndicadorTipoOperacao(){
+        return indicadorTipoOperacao;
+    }
+
+    public void setIndicadorTipoOperacao(int indicadorTipoOperacao){
+        this.indicadorTipoOperacao = indicadorTipoOperacao;
+    }
+
+    public int getIndicadorEmitenteDoDocumentoFiscal(){
+        return indicadorEmitenteDoDocumentoFiscal;
+    }
+
+    public void setIndicadorEmitenteDoDocumentoFiscal(int indicadorEmitenteDoDocumentoFiscal){
+        this.indicadorEmitenteDoDocumentoFiscal = indicadorEmitenteDoDocumentoFiscal;
+    }
+
+    public Long getCodigoParticipante(){
+        return codigoParticipante;
+    }
+
+    public void setCodigoParticipante(Long codigoParticipante){
+        this.codigoParticipante = codigoParticipante;
+    }
+
+    public int getCodigoDoModeloDoDocumentoFiscal(){
+        return codigoDoModeloDoDocumentoFiscal;
+    }
+
+    public void setCodigoDoModeloDoDocumentoFiscal(int codigoDoModeloDoDocumentoFiscal){
+        this.codigoDoModeloDoDocumentoFiscal = codigoDoModeloDoDocumentoFiscal;
+    }
+
+    public int getCodigoDaSituacaoDoDocumentoFiscal(){
+        return codigoDaSituacaoDoDocumentoFiscal;
+    }
+
+    public void setCodigoDaSituacaoDoDocumentoFiscal(int codigoDaSituacaoDoDocumentoFiscal){
+        this.codigoDaSituacaoDoDocumentoFiscal = codigoDaSituacaoDoDocumentoFiscal;
+    }
+
+    public Long getSerieDoDocumentoFiscal(){
+        return serieDoDocumentoFiscal;
+    }
+
+    public void setSerieDoDocumentoFiscal(Long serieDoDocumentoFiscal){
+        this.serieDoDocumentoFiscal = serieDoDocumentoFiscal;
+    }
+
+    public Long getNumeroDoDocumentoFiscal(){
+        return numeroDoDocumentoFiscal;
+    }
+
+    public void setNumeroDoDocumentoFiscal(Long numeroDoDocumentoFiscal){
+        this.numeroDoDocumentoFiscal = numeroDoDocumentoFiscal;
+    }
+
+    public Long getChaveDaNotaFiscalEletronica(){
+        return chaveDaNotaFiscalEletronica;
+    }
+
+    public void setChaveDaNotaFiscalEletronica(Long chaveDaNotaFiscalEletronica){
+        this.chaveDaNotaFiscalEletronica = chaveDaNotaFiscalEletronica;
+    }
+
+    public Long getDataDaEmissaoDoDocumentoFiscal(){
+        return dataDaEmissaoDoDocumentoFiscal;
+    }
+
+    public void setDataDaEmissaoDoDocumentoFiscal(Long dataDaEmissaoDoDocumentoFiscal){
+        this.dataDaEmissaoDoDocumentoFiscal = dataDaEmissaoDoDocumentoFiscal;
+    }
+
+    public Long getDataDaEntradaOuSaida(){
+        return dataDaEntradaOuSaida;
+    }
+
+    public void setDataDaEntradaOuSaida(Long dataDaEntradaOuSaida){
+        this.dataDaEntradaOuSaida = dataDaEntradaOuSaida;
+    }
+
+    public Long getValorTotalDoDocumentoFiscal(){
+        return valorTotalDoDocumentoFiscal;
+    }
+
+    public void setValorTotalDoDocumentoFiscal(Long valorTotalDoDocumentoFiscal){
+        this.valorTotalDoDocumentoFiscal = valorTotalDoDocumentoFiscal;
+    }
+
+    public int getIndicadorDoTipoDePagamento(){
+        return indicadorDoTipoDePagamento;
+    }
+
+    public void setIndicadorDoTipoDePagamento(int indicadorDoTipoDePagamento){
+        this.indicadorDoTipoDePagamento = indicadorDoTipoDePagamento;
+    }
+
+    public Long getValorTotalDesconto(){
+        return valorTotalDesconto;
+    }
+
+    public void setValorTotalDesconto(Long valorTotalDesconto){
+        this.valorTotalDesconto = valorTotalDesconto;
+    }
+
+    public Long getAbatimentoNaoTributadoENaoComercial(){
+        return abatimentoNaoTributadoENaoComercial;
+    }
+
+    public void setAbatimentoNaoTributadoENaoComercial(Long abatimentoNaoTributadoENaoComercial){
+        this.abatimentoNaoTributadoENaoComercial = abatimentoNaoTributadoENaoComercial;
+    }
+
+    public Long getValorTotalDasMercadoriasEServicos(){
+        return valorTotalDasMercadoriasEServicos;
+    }
+
+    public void setValorTotalDasMercadoriasEServicos(Long valorTotalDasMercadoriasEServicos){
+        this.valorTotalDasMercadoriasEServicos = valorTotalDasMercadoriasEServicos;
+    }
+
+    public int getIndicadorDoTipoDoFrete(){
+        return indicadorDoTipoDoFrete;
+    }
+
+    public void setIndicadorDoTipoDoFrete(int indicadorDoTipoDoFrete){
+        this.indicadorDoTipoDoFrete = indicadorDoTipoDoFrete;
+    }
+
+    public Long getValorDoFreteIndicadoNoDocumentoFiscal(){
+        return valorDoFreteIndicadoNoDocumentoFiscal;
+    }
+
+    public void setValorDoFreteIndicadoNoDocumentoFiscal(Long valorDoFreteIndicadoNoDocumentoFiscal){
+        this.valorDoFreteIndicadoNoDocumentoFiscal = valorDoFreteIndicadoNoDocumentoFiscal;
+    }
+
+    public Long getValorDoSeguroIndicadoNoDocumentoFIscal(){
+        return valorDoSeguroIndicadoNoDocumentoFIscal;
+    }
+
+    public void setValorDoSeguroIndicadoNoDocumentoFIscal(Long valorDoSeguroIndicadoNoDocumentoFIscal){
+        this.valorDoSeguroIndicadoNoDocumentoFIscal = valorDoSeguroIndicadoNoDocumentoFIscal;
+    }
+
+    public Long getValorDeOutrasDespesasAcessorias(){
+        return valorDeOutrasDespesasAcessorias;
+    }
+
+    public void setValorDeOutrasDespesasAcessorias(Long valorDeOutrasDespesasAcessorias){
+        this.valorDeOutrasDespesasAcessorias = valorDeOutrasDespesasAcessorias;
+    }
+
+    public Long getValorBaseDeCalculoDoICMS(){
+        return valorBaseDeCalculoDoICMS;
+    }
+
+    public void setValorBaseDeCalculoDoICMS(Long valorBaseDeCalculoDoICMS){
+        this.valorBaseDeCalculoDoICMS = valorBaseDeCalculoDoICMS;
+    }
+
+    public Long getValorDoICMSRetidoPorSubstituicaoTributaria(){
+        return valorDoICMSRetidoPorSubstituicaoTributaria;
+    }
+
+    public void setValorDoICMSRetidoPorSubstituicaoTributaria(Long valorDoICMSRetidoPorSubstituicaoTributaria){
+        this.valorDoICMSRetidoPorSubstituicaoTributaria = valorDoICMSRetidoPorSubstituicaoTributaria;
+    }
+
+    public Long getValorTotalDoIPI(){
+        return valorTotalDoIPI;
+    }
+
+    public void setValorTotalDoIPI(Long valorTotalDoIPI){
+        this.valorTotalDoIPI = valorTotalDoIPI;
+    }
+
+    public Long getValorTotalDoPIS(){
+        return valorTotalDoPIS;
+    }
+
+    public void setValorTotalDoPIS(Long valorTotalDoPIS){
+        this.valorTotalDoPIS = valorTotalDoPIS;
+    }
+
+    public Long getValorTotalDaCOFINS(){
+        return valorTotalDaCOFINS;
+    }
+
+    public void setValorTotalDaCOFINS(Long valorTotalDaCOFINS){
+        this.valorTotalDaCOFINS = valorTotalDaCOFINS;
+    }
+
+    public Long getValorTotalDoPISRetidoPorSubstituicaoTributaria(){
+        return valorTotalDoPISRetidoPorSubstituicaoTributaria;
+    }
+
+    public void setValorTotalDoPISRetidoPorSubstituicaoTributaria(Long valorTotalDoPISRetidoPorSubstituicaoTributaria){
+        this.valorTotalDoPISRetidoPorSubstituicaoTributaria = valorTotalDoPISRetidoPorSubstituicaoTributaria;
+    }
+
+    public Long getValorTotalDaCOFINSRetidoPorSubstituicaoTributaria(){
+        return valorTotalDaCOFINSRetidoPorSubstituicaoTributaria;
+    }
+
+    public void setValorTotalDaCOFINSRetidoPorSubstituicaoTributaria(Long valorTotalDaCOFINSRetidoPorSubstituicaoTributaria){
+        this.valorTotalDaCOFINSRetidoPorSubstituicaoTributaria = valorTotalDaCOFINSRetidoPorSubstituicaoTributaria;
+    }
+}

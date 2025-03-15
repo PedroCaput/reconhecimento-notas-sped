@@ -1,0 +1,65 @@
+package java.com.sped.task.service;
+
+
+import java.com.sped.task.domain.model.Participante;
+import java.com.sped.task.domain.repository.ParticipanteRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.NoSuchElementException;
+
+@Service
+public class ParticipanteService {
+    private final ParticipanteRepository participanteRepository;
+
+    public ParticipanteService(participanteRepository participanteRepository){
+        this.participanteRepository = participanteRepository;
+    }
+
+    public Participante findParticipanteById(Long id){
+        return participanteRepository.findById(id).orElseThrow(NoSuchElementException::new);
+    }
+
+    public Participante createParticipante(Participante ParticipanteToCreate){
+        if(ParticipanteToCreate.getId() != null && participanteRepository.existsById(ParticipanteToCreate.getId())){
+            throw new IllegalArgumentException("This Participante ID already exists.");
+        }
+        else if (participanteRepository.existsParticipante(
+                ParticipanteToCreate.getRegistro(),
+                ParticipanteToCreate.getCodigoParticipante(),
+                ParticipanteToCreate.getNome(),
+                ParticipanteToCreate.getCodigoPais(),
+                ParticipanteToCreate.getCnpj(),
+                ParticipanteToCreate.getCpf(),
+                ParticipanteToCreate.getInscricaoEstadual(),
+                ParticipanteToCreate.getCodigoMunicipal(),
+                ParticipanteToCreate.getSuframa(),
+                ParticipanteToCreate.getEndereco(),
+                ParticipanteToCreate.getNumeroEndereco(),
+                ParticipanteToCreate.getComplementoEndereco(),
+                ParticipanteToCreate.getBairro()
+        ))
+        {
+            throw new IllegalArgumentException("This Participante already exists.");
+        }
+        else {
+            return participanteRepository.save(ParticipanteToCreate);
+        }
+    }
+
+    public Participante updateParticipante(Participante ParticipanteToUpdate){
+        if(ParticipanteToUpdate.getId() == null || !participanteRepository.existsById(ParticipanteToUpdate.getId()))
+        {
+            throw new IllegalArgumentException("This Participante does not exists.");
+        }
+        return participanteRepository.save(ParticipanteToUpdate);
+    }
+
+    public boolean deleteParticipanteById(Long id){
+        if(id == null || !participanteRepository.existsById(id))
+        {
+            throw new IllegalArgumentException("This Participante does not exists.");
+        }
+        participanteRepository.deleteById(id);
+        return true;
+    }
+}

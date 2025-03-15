@@ -1,0 +1,137 @@
+package java.com.sped.task.domain.model;
+
+import jakarta.persistence.*;
+
+@Entity(name = "tb_item")
+public class Item {
+    private Long registro;
+
+    @Id
+    private Long codigoItem;
+
+    private String descricaoItem;
+
+    private Long codigoBarra;
+
+    private Long codigoAnteriorItem;
+
+    private String unidadeDeMedidaUtilizada;
+
+    private Long tipoItem;
+
+    private Long codigoNCM;
+
+    private Long exIPI;
+
+    private Long codigoGenero;
+
+    private Long codigoLST;
+
+    private Long alicotaICMS;
+
+    private Long cest;
+
+    public Long getRegistro() {
+        return registro;
+    }
+
+    public void setRegistro(Long registro) {
+        this.registro = registro;
+    }
+
+    public Long getCodigoItem(){
+        return codigoItem;
+    }
+
+    public void setCodigoItem(Long codigoItem){
+        this.codigoItem = codigoItem;
+    }
+
+    public String getDescricaoItem() {
+        return descricaoItem;
+    }
+
+    public void setDescricaoItem(String descricaoItem) {
+        this.descricaoItem = descricaoItem;
+    }
+
+    public getCodigoBarra(){
+        return codigoBarra;
+    }
+
+    public setCodigoBarra(Long codigoBarra){
+        this.codigoBarra = codigoBarra;
+    }
+
+    public getCodigoAnteriorItem(){
+        return codigoAnteriorItem;
+    }
+
+    public setCodigoAnteriorItem(Long codigoAnteriorItem){
+        this.codigoAnteriorItem = codigoAnteriorItem;
+    }
+
+    public getUnidadeDeMedidaUtilizada(){
+        return unidadeDeMedidaUtilizada;
+    }
+
+    public setUnidadeDeMedidaUtilizada(String unidadeDeMedidaUtilizada){
+        this.unidadeDeMedidaUtilizada = unidadeDeMedidaUtilizada;
+    }
+
+    public getTipoItem(){
+        return tipoItem;
+    }
+
+    public setTipoItem(Long tipoItem){
+        this.tipoItem = tipoItem;
+    }
+
+    public getCodigoNCM(){
+        return codigoNCM;
+    }
+
+    public setCodigoNCM(Long codigoNCM){
+        this.codigoNCM = codigoNCM;
+    }
+
+    public getExIPI(){
+        return exIPI;
+    }
+
+    public setExIPI(Long exIPI){
+        this.exIPI = exIPI;
+    }
+
+    public getCodigoGenero(){
+        return codigoGenero;
+    }
+
+    public setCodigoGenero(Long codigoGenero){
+        this.codigoGenero = codigoGenero;
+    }
+
+    public getCodigoLST(){
+        return codigoLST;
+    }
+
+    public setCodigoLST(Long codigoLST){
+        this.codigoLST = codigoLST;
+    }
+
+    public getAlicotaICMS(){
+        return alicotaICMS;
+    }
+
+    public setAlicotaICMS(String alicotaICMS){
+        this.alicotaICMS = alicotaICMS;
+    }
+
+    public getCest(){
+        return cest;
+    }
+
+    public setCest(Long cest){
+        this.cest = cest;
+    }
+}

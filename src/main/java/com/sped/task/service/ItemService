@@ -1,0 +1,65 @@
+package java.com.sped.task.service;
+
+
+import java.com.sped.task.domain.model.Item;
+import java.com.sped.task.domain.repository.ItemRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.NoSuchElementException;
+
+@Service
+public class ItemService {
+    private final ItemRepository itemRepository;
+
+    public ItemService(itemRepository itemRepository){
+        this.itemRepository = itemRepository;
+    }
+
+    public Item findItemById(Long id){
+        return itemRepository.findById(id).orElseThrow(NoSuchElementException::new);
+    }
+
+    public Item createItem(Item ItemToCreate){
+        if(ItemToCreate.getId() != null && itemRepository.existsById(ItemToCreate.getId())){
+            throw new IllegalArgumentException("This Item ID already exists.");
+        }
+        else if (itemRepository.existsItem(
+                ItemToCreate.getRegistro(),
+                ItemToCreate.getCodigoItem(),
+                ItemToCreate.getDescricaoItem(),
+                ItemToCreate.getCodigoBarra(),
+                ItemToCreate.getCodigoAnteriorItem(),
+                ItemToCreate.getUnidadeDeMedidaUtilizada(),
+                ItemToCreate.getTipoItem(),
+                ItemToCreate.getCodigoNCM(),
+                ItemToCreate.getExIPI(),
+                ItemToCreate.getCodigoGenero(),
+                ItemToCreate.getCodigoLST(),
+                ItemToCreate.getAlicotaICMS(),
+                ItemToCreate.getCest()
+        ))
+        {
+            throw new IllegalArgumentException("This Item already exists.");
+        }
+        else {
+            return itemRepository.save(ItemToCreate);
+        }
+    }
+
+    public Item updateItem(Item ItemToUpdate){
+        if(ItemToUpdate.getId() == null || !itemRepository.existsById(ItemToUpdate.getId()))
+        {
+            throw new IllegalArgumentException("This Item does not exists.");
+        }
+        return itemRepository.save(ItemToUpdate);
+    }
+
+    public boolean deleteItemById(Long id){
+        if(id == null || !itemRepository.existsById(id))
+        {
+            throw new IllegalArgumentException("This Item does not exists.");
+        }
+        itemRepository.deleteById(id);
+        return true;
+    }
+}
